@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Orders | VOGUE STREET</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#848484",
+                    "secondary-container": "#e1e1c9",
+                    "outline": "#7e7576",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-container": "#636451",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "primary": "#000000",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "on-surface-variant": "#4c4546",
+                    "on-surface": "#1a1c1c"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-xl": "120px",
+                    "stack-md": "40px",
+                    "stack-lg": "80px",
+                    "gutter": "32px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .order-row:hover { background-color: #f3f3f4; }
+    .status-pill {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 9999px;
+    }
+    .status-pending { background: #fff3cd; color: #7a5b00; }
+    .status-confirmed, .status-completed { background: #d7f5df; color: #14532d; }
+    .status-cancelled { background: #ffdad6; color: #93000a; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<header class="bg-surface dark:bg-surface-container-low border-b border-outline-variant top-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">
+    <a href="/home">VOGUE STREET</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+    <a class="font-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/home">Home</a>
+    <a class="font-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Shop</a>
+    <a class="font-body-md uppercase tracking-widest text-primary" href="/orders-page">My Orders</a>
+</div>
+<div class="flex items-center space-x-6">
+    <a href="/cart-page" class="relative material-symbols-outlined">
+        shopping_cart
+        <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+    </a>
+    <button class="material-symbols-outlined p-2 text-primary" onclick="window.location.href='/login'">person</button>
+</div>
+</nav>
+</header>
+
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<h1 class="font-headline-lg text-headline-lg mb-stack-md text-center">My Orders</h1>
+
+<div id="orders-loading" class="text-center text-on-surface-variant py-16">Loading orders...</div>
+
+<div id="orders-error" class="hidden text-center text-error py-16"></div>
+
+<div id="orders-empty" class="hidden text-center text-on-surface-variant py-16">
+    <span class="material-symbols-outlined text-5xl mb-4 block">inventory_2</span>
+    No orders yet. <a href="/products-page" class="underline">Start shopping</a>.
+</div>
+
+<div id="orders-table-wrap" class="hidden overflow-x-auto border border-outline-variant">
+<table class="w-full text-left border-collapse">
+    <thead>
+        <tr class="bg-surface-container-lowest border-b border-outline-variant">
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Order ID</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Items</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Ship To</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Payment</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4 text-right">Total</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Status</th>
+        </tr>
+    </thead>
+    <tbody id="orders-table-body"></tbody>
+</table>
+</div>
+</main>
+
+<!-- Adjust these src paths to match where your project serves static JS from -->
+<script src="/static/js/api.js"></script>
+<script src="/static/js/common.js"></script>
+<script>
+    function fmtMoney(n) {
+        return formatINR(n);
+    }
+
+    function statusClass(status) {
+        const s = (status || '').toLowerCase();
+        if (s === 'pending') return 'status-pending';
+        if (s === 'cancelled') return 'status-cancelled';
+        return 'status-confirmed';
+    }
+
+    async function loadOrders() {
+        const loading = document.getElementById('orders-loading');
+        const errorBox = document.getElementById('orders-error');
+        const empty = document.getElementById('orders-empty');
+        const tableWrap = document.getElementById('orders-table-wrap');
+        const tbody = document.getElementById('orders-table-body');
+
+        loading.classList.remove('hidden');
+        errorBox.classList.add('hidden');
+        empty.classList.add('hidden');
+        tableWrap.classList.add('hidden');
+
+        try {
+            const orders = await fetchOrders();
+            loading.classList.add('hidden');
+
+            if (!Array.isArray(orders) || orders.length === 0) {
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            tbody.innerHTML = orders.map(o => `
+                <tr class="order-row border-b border-outline-variant last:border-b-0">
+                    <td class="px-4 py-4 font-label-lg text-label-lg">#${o.id}</td>
+                    <td class="px-4 py-4">
+                        <div class="space-y-3">
+                            ${(o.items || []).map(i => `
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 shrink-0 overflow-hidden bg-surface-container">
+                                        <img src="${i.image || 'https://placehold.co/48x48?text=%20'}" alt="${i.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/48x48?text=%20'"/>
+                                    </div>
+                                    <div class="text-xs">
+                                        <div class="font-label-lg text-label-lg uppercase text-[11px]">${i.name}</div>
+                                        <div class="text-on-surface-variant">Qty ${i.quantity} &middot; ${fmtMoney(i.price)} each</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-on-surface-variant">${o.address}</td>
+                    <td class="px-4 py-4 text-sm text-on-surface-variant">${o.payment_method}</td>
+                    <td class="px-4 py-4 text-right font-label-lg text-label-lg">${fmtMoney(o.total)}</td>
+                    <td class="px-4 py-4"><span class="status-pill ${statusClass(o.status)}">${o.status}</span></td>
+                </tr>
+            `).join('');
+
+            tableWrap.classList.remove('hidden');
+        } catch (err) {
+            loading.classList.add('hidden');
+            if (String(err.message || '').toLowerCase().includes('login')) {
+                window.location.href = '/login';
+                return;
+            }
+            errorBox.textContent = err.message || 'Failed to load orders.';
+            errorBox.classList.remove('hidden');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadOrders();
+        if (typeof updateCartCount === 'function') updateCartCount();
+    });
+</script>
+</body></html>

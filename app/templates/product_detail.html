@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{% if product %}{{ product.name }} | VOGUE STREET{% else %}Product Not Found | VOGUE STREET{% endif %}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Playfair+Display:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#848484",
+                    "inverse-surface": "#2f3131",
+                    "secondary-container": "#e1e1c9",
+                    "tertiary-container": "#241a00",
+                    "on-primary-fixed": "#1b1b1b",
+                    "outline": "#7e7576",
+                    "surface-container-low": "#f3f3f4",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-tint": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1d0e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-background": "#1a1c1c",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "secondary-fixed-dim": "#c8c8b0",
+                    "on-secondary-container": "#636451",
+                    "tertiary": "#000000",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#a08000",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1b1b1b",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#474747",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "secondary": "#5e604d",
+                    "primary-fixed": "#e2e2e2",
+                    "primary": "#000000",
+                    "tertiary-fixed": "#ffe088",
+                    "outline-variant": "#cfc4c5",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#474836",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-surface-variant": "#4c4546",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed": "#e4e4cc",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-xl": "120px",
+                    "stack-md": "40px",
+                    "stack-lg": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .rec-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        .rec-card:hover {
+            transform: translateY(-4px);
+        }
+        .rec-card-img-container {
+            overflow: hidden;
+        }
+        .rec-card-img-container img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rec-card:hover .rec-card-img-container img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant py-4 px-margin-desktop transition-all duration-300" id="main-header">
+<div class="max-w-container-max mx-auto flex justify-between items-center">
+<h1 class="font-display-lg text-headline-md font-bold tracking-tighter text-primary"><a href="/home">VOGUE STREET</a></h1>
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/home">Home</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/men">Men</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/women">Women</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">New Arrivals</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="hover:scale-110 transition-transform relative" onclick="window.location.href='/cart-page'">
+    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+    <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+</button>
+<button class="material-symbols-outlined p-2 text-primary scale-102 transition-transform duration-400 ease-in-out" onclick="window.location.href='/login'">
+    person
+</button>
+</div>
+</div>
+</header>
+
+<main class="pt-[120px] max-w-container-max mx-auto px-margin-desktop mb-stack-xl">
+
+{% if product %}
+<!-- Breadcrumb -->
+<div class="mb-8 text-label-sm font-label-sm uppercase text-on-surface-variant">
+  <a href="/home" class="hover:text-primary">Home</a> /
+  <a href="/products-page" class="hover:text-primary">Products</a> /
+  <span class="text-primary">{{ product.name }}</span>
+</div>
+
+<!-- Product Detail -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-stack-xl">
+  <!-- Image -->
+  <div class="aspect-square bg-surface-container-low overflow-hidden">
+    <img alt="{{ product.name }}" class="w-full h-full object-cover" src="{{ product.image or 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22%3E%3Crect width=%22100%25%22 height=%22100%25%22 fill=%22%23e2e2e2%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2228%22 fill=%22%23888%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E' }}"/>
+  </div>
+
+  <!-- Info -->
+  <div class="flex flex-col justify-center">
+    <p class="font-label-lg text-label-lg uppercase text-on-surface-variant mb-2">{{ product.category or "General" }}</p>
+    <h1 class="font-display-lg text-headline-lg text-primary mb-4">{{ product.name }}</h1>
+    <p class="font-bold text-2xl text-primary mb-6">₹{{ "{:,.2f}".format(product.price * 83) }}</p>
+
+    {% if product.stock and product.stock > 0 %}
+      <p class="text-body-md text-on-surface-variant mb-8">{{ product.stock }} in stock</p>
+      <button id="add-to-cart-btn" data-product-id="{{ product.id }}"
+        class="w-full lg:w-auto px-12 py-4 bg-primary text-on-primary font-label-lg text-label-lg uppercase hover:bg-white hover:text-primary border border-primary transition-all duration-300">
+        Add to Cart
+      </button>
+    {% else %}
+      <p class="text-body-md text-error mb-8">Out of stock</p>
+      <button disabled class="w-full lg:w-auto px-12 py-4 bg-surface-container-highest text-on-surface-variant font-label-lg text-label-lg uppercase cursor-not-allowed">
+        Out of Stock
+      </button>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Recommendations -->
+<div id="recommendations-container"></div>
+
+{% else %}
+<!-- Not Found -->
+<div class="text-center py-stack-xl">
+  <h1 class="font-display-lg text-headline-lg text-primary mb-4">Product Not Found</h1>
+  <p class="text-body-md text-on-surface-variant mb-8">This product doesn't exist or may have been removed.</p>
+  <a href="/products-page" class="inline-block px-12 py-4 bg-primary text-on-primary font-label-lg text-label-lg uppercase hover:bg-white hover:text-primary border border-primary transition-all duration-300">
+    Browse Products
+  </a>
+</div>
+{% endif %}
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full pt-stack-xl pb-stack-md">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center border-t border-on-primary-container pt-8 gap-4">
+<p class="text-label-sm opacity-60">© 2024 VOGUE STREET. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+
+<script src="/static/js/api.js"></script>
+<script src="/static/js/recommendations.js"></script>
+{% if product %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => loadRecommendations({{ product.id }}, 3));
+
+  const addBtn = document.getElementById('add-to-cart-btn');
+  if (addBtn) {
+    addBtn.addEventListener('click', async () => {
+      addBtn.disabled = true;
+      try {
+        await addToCart({ product_id: {{ product.id }}, quantity: 1 });
+        await refreshCartCount();
+        addBtn.innerText = 'Added';
+        setTimeout(() => {
+          addBtn.innerText = 'Add to Cart';
+          addBtn.disabled = false;
+        }, 2000);
+      } catch (err) {
+        alert(err.message || 'Failed to add to cart');
+        addBtn.disabled = false;
+      }
+    });
+  }
+
+  async function refreshCartCount() {
+    try {
+      const count = await fetchCartCount();
+      const badge = document.getElementById('cart-count-badge');
+      if (badge) {
+        badge.innerText = count;
+        badge.style.display = count > 0 ? 'inline-flex' : 'none';
+      }
+    } catch (err) {
+      console.error('Unable to refresh cart count', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', refreshCartCount);
+</script>
+{% endif %}
+</body></html>

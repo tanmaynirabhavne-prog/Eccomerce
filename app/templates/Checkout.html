@@ -1,0 +1,789 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | VOGUE STREET</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#848484",
+                    "inverse-surface": "#2f3131",
+                    "secondary-container": "#e1e1c9",
+                    "tertiary-container": "#241a00",
+                    "on-primary-fixed": "#1b1b1b",
+                    "outline": "#7e7576",
+                    "surface-container-low": "#f3f3f4",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-tint": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1d0e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-background": "#1a1c1c",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "secondary-fixed-dim": "#c8c8b0",
+                    "on-secondary-container": "#636451",
+                    "tertiary": "#000000",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#a08000",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1b1b1b",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#474747",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "secondary": "#5e604d",
+                    "primary-fixed": "#e2e2e2",
+                    "primary": "#000000",
+                    "tertiary-fixed": "#ffe088",
+                    "outline-variant": "#cfc4c5",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#474836",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-surface-variant": "#4c4546",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed": "#e4e4cc",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "stack-xl": "120px",
+                    "stack-md": "40px",
+                    "stack-lg": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "32px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .luxury-input {
+            border: none;
+            border-bottom: 1px solid #cfc4c5;
+            background: transparent;
+            padding: 0.75rem 0;
+            width: 100%;
+            transition: border-color 0.4s ease;
+        }
+        .luxury-input:focus {
+            outline: none;
+            border-color: #000000;
+            box-shadow: none;
+        }
+        .luxury-input.field-error {
+            border-color: #ba1a1a;
+        }
+        .field-error-msg {
+            color: #ba1a1a;
+            font-size: 11px;
+            margin-top: 4px;
+            display: none;
+        }
+        .field-error-msg.show {
+            display: block;
+        }
+        .payment-radio:checked + label {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .view { display: none; }
+        .view.active { display: block; }
+        .spinner {
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 0.7s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .order-row:hover { background-color: #f3f3f4; }
+        #toast-container {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .toast {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 280px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            animation: toastIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .toast.toast-out {
+            animation: toastOut 0.3s ease forwards;
+        }
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes toastOut {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(30px); }
+        }
+        table.orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table.orders-table th {
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #4c4546;
+            padding: 12px 16px;
+            border-bottom: 1px solid #7e7576;
+            white-space: nowrap;
+        }
+        table.orders-table td {
+            padding: 16px;
+            border-bottom: 1px solid #cfc4c5;
+            vertical-align: top;
+            font-size: 14px;
+        }
+        table.orders-table tbody tr:hover {
+            background-color: #f3f3f4;
+        }
+        .status-pill {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            background-color: #e1e1c9;
+            color: #636451;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<div id="toast-container"></div>
+<header class="bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline docked full-width top-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md font-bold tracking-tighter text-primary dark:text-on-surface">
+    <a href="/home" class="hover:text-primary">VOGUE STREET</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/home">Home</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Men</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Women</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Shoes</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Clothing</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">New Arrivals</a>
+    <a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products-page">Offers</a>
+</div>
+<div class="flex items-center space-x-6">
+    <button class="relative material-symbols-outlined scale-102 transition-transform duration-400 ease-in-out" onclick="showView('orders')" title="My Orders">receipt_long</button>
+    <a href="/cart-page" class="relative material-symbols-outlined scale-102 transition-transform duration-400 ease-in-out">
+        shopping_cart
+        <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+    </a>
+    <button class="material-symbols-outlined p-2 text-primary scale-102 transition-transform duration-400 ease-in-out" onclick="window.location.href='/login'">person</button>
+</div>
+</nav>
+</header>
+
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+
+<div id="view-checkout" class="view active fade-in-up">
+<h1 class="font-headline-lg text-headline-lg mb-stack-md text-center">Checkout</h1>
+<form id="checkoutForm" novalidate>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-7 space-y-stack-lg">
+
+    <section>
+        <h2 class="font-label-lg text-label-lg uppercase mb-6 flex items-center">
+            <span class="mr-3 bg-primary text-on-primary w-6 h-6 flex items-center justify-center rounded-full text-[10px]">1</span>
+            Customer Information
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="fullName">Full Name</label>
+                <input class="luxury-input font-body-md" id="fullName" name="fullName" placeholder="ALEXANDER VOGUE" type="text" required=""/>
+                <span class="field-error-msg" data-error-for="fullName">Please enter your full name.</span>
+            </div>
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="email">Email Address</label>
+                <input class="luxury-input font-body-md" id="email" name="email" placeholder="alex@vogue.com" type="email" required=""/>
+                <span class="field-error-msg" data-error-for="email">Please enter a valid email.</span>
+            </div>
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="phone">Phone Number</label>
+                <input class="luxury-input font-body-md" id="phone" name="phone" placeholder="+1 234 567 890" type="tel" required=""/>
+                <span class="field-error-msg" data-error-for="phone">Please enter a phone number.</span>
+            </div>
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="city">City</label>
+                <input class="luxury-input font-body-md" id="city" name="city" placeholder="NEW YORK" type="text" required=""/>
+                <span class="field-error-msg" data-error-for="city">Please enter your city.</span>
+            </div>
+            <div class="md:col-span-2 flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="address">Shipping Address</label>
+                <input class="luxury-input font-body-md" id="address" name="address" placeholder="72 FIFTH AVENUE" type="text" required=""/>
+                <span class="field-error-msg" data-error-for="address">Please enter a shipping address.</span>
+            </div>
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="state">State / Province</label>
+                <input class="luxury-input font-body-md" id="state" name="state" placeholder="NY" type="text" required=""/>
+                <span class="field-error-msg" data-error-for="state">Please enter a state or province.</span>
+            </div>
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="postalCode">Postal Code</label>
+                <input class="luxury-input font-body-md" id="postalCode" name="postalCode" placeholder="10011" type="text" required=""/>
+                <span class="field-error-msg" data-error-for="postalCode">Please enter a postal code.</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="font-label-lg text-label-lg uppercase mb-6 flex items-center">
+            <span class="mr-3 bg-primary text-on-primary w-6 h-6 flex items-center justify-center rounded-full text-[10px]">2</span>
+            Payment Method
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div>
+                <input checked="" class="hidden payment-radio" id="card" name="payment" type="radio" value="Credit Card"/>
+                <label class="border border-outline-variant p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary" for="card">
+                    <span class="material-symbols-outlined mb-2">credit_card</span>
+                    <span class="font-label-sm text-[10px] uppercase">Credit Card</span>
+                </label>
+            </div>
+            <div>
+                <input class="hidden payment-radio" id="upi" name="payment" type="radio" value="UPI"/>
+                <label class="border border-outline-variant p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary" for="upi">
+                    <span class="material-symbols-outlined mb-2">account_balance</span>
+                    <span class="font-label-sm text-[10px] uppercase">UPI</span>
+                </label>
+            </div>
+            <div>
+                <input class="hidden payment-radio" id="paypal" name="payment" type="radio" value="PayPal"/>
+                <label class="border border-outline-variant p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary" for="paypal">
+                    <span class="material-symbols-outlined mb-2">payments</span>
+                    <span class="font-label-sm text-[10px] uppercase">PayPal</span>
+                </label>
+            </div>
+            <div>
+                <input class="hidden payment-radio" id="cod" name="payment" type="radio" value="Cash on Delivery"/>
+                <label class="border border-outline-variant p-4 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary" for="cod">
+                    <span class="material-symbols-outlined mb-2">local_shipping</span>
+                    <span class="font-label-sm text-[10px] uppercase">Cash</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="space-y-6" id="card-details">
+            <div class="flex flex-col">
+                <label class="font-label-sm text-label-sm uppercase mb-1" for="cardNumber">Card Number</label>
+                <input class="luxury-input font-body-md" id="cardNumber" name="cardNumber" placeholder="0000 0000 0000 0000" type="text"/>
+                <span class="field-error-msg" data-error-for="cardNumber">Please enter a valid 16-digit card number.</span>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="flex flex-col">
+                    <label class="font-label-sm text-label-sm uppercase mb-1" for="expiry">Expiry Date</label>
+                    <input class="luxury-input font-body-md" id="expiry" name="expiry" placeholder="MM / YY" type="text"/>
+                    <span class="field-error-msg" data-error-for="expiry">Please enter expiry as MM/YY.</span>
+                </div>
+                <div class="flex flex-col">
+                    <label class="font-label-sm text-label-sm uppercase mb-1" for="cvv">CVV</label>
+                    <input class="luxury-input font-body-md" id="cvv" name="cvv" placeholder="***" type="password"/>
+                    <span class="field-error-msg" data-error-for="cvv">Please enter a valid CVV.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<aside class="lg:col-span-5">
+<div class="bg-surface-container-lowest border border-outline-variant p-8 sticky top-24">
+<h2 class="font-headline-md text-headline-md mb-8">Order Summary</h2>
+<div class="space-y-6 mb-8" id="order-summary-items">
+<p class="text-on-surface-variant text-sm">Loading cart items...</p>
+</div>
+<div class="border-t border-outline-variant pt-6 space-y-4">
+<div class="flex justify-between font-body-md"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+<div class="flex justify-between font-body-md"><span>Shipping</span><span id="summary-shipping" class="text-primary font-bold">Complimentary</span></div>
+<div class="flex justify-between font-label-lg text-lg pt-4 border-t border-outline-variant"><span>TOTAL</span><span id="summary-total">$0.00</span></div>
+</div>
+
+<div id="submit-error" class="mt-6 text-error text-sm hidden"></div>
+
+<button type="submit" id="placeOrderBtn" class="w-full mt-10 bg-primary text-on-primary py-5 font-label-lg text-label-lg uppercase tracking-widest border border-primary hover:bg-surface-container-lowest hover:text-primary transition-all duration-400 scale-100 hover:scale-[1.02] flex items-center justify-center gap-3">
+    <span id="placeOrderLabel">Place Order</span>
+</button>
+<p class="mt-6 text-center text-[10px] uppercase tracking-tighter text-on-surface-variant">By placing your order, you agree to our terms of service and privacy policy.</p>
+</div>
+</aside>
+</div>
+</form>
+</div>
+
+<div id="view-confirmation" class="view fade-in-up">
+<div class="max-w-2xl mx-auto text-center py-stack-md">
+    <span class="material-symbols-outlined text-6xl text-primary">check_circle</span>
+    <h1 class="font-headline-lg text-headline-lg mt-6 mb-2">Order Confirmed</h1>
+    <p class="text-on-surface-variant mb-10">Your order has been saved to the database. A confirmation has been sent to <span id="conf-email" class="font-semibold text-on-surface"></span>.</p>
+
+    <div class="bg-surface-container-lowest border border-outline-variant p-8 text-left space-y-6">
+        <div class="flex justify-between border-b border-outline-variant pb-4">
+            <div>
+                <p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Order ID</p>
+                <p id="conf-order-id" class="font-label-lg text-label-lg"></p>
+            </div>
+            <div class="text-right">
+                <p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Placed</p>
+                <p id="conf-order-date" class="font-label-lg text-label-lg"></p>
+            </div>
+        </div>
+        <div>
+            <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-2">Ship To</p>
+            <p id="conf-shipping" class="font-body-md"></p>
+        </div>
+        <div>
+            <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mb-2">Payment Method</p>
+            <p id="conf-payment" class="font-body-md"></p>
+        </div>
+        <div class="flex justify-between font-label-lg text-lg pt-4 border-t border-outline-variant">
+            <span>TOTAL PAID</span>
+            <span id="conf-total"></span>
+        </div>
+    </div>
+
+    <div class="flex gap-4 mt-10 justify-center">
+        <button onclick="showView('orders')" class="border border-primary text-primary px-8 py-4 font-label-lg text-label-lg uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">View My Orders</button>
+        <button onclick="window.location.href='/home'" class="bg-primary text-on-primary px-8 py-4 font-label-lg text-label-lg uppercase tracking-widest hover:opacity-90 transition-all duration-300">Continue Shopping</button>
+    </div>
+</div>
+</div>
+
+<div id="view-orders" class="view fade-in-up">
+<div class="flex items-center justify-between mb-stack-md">
+    <h1 class="font-headline-lg text-headline-lg">My Orders</h1>
+    <button onclick="showView('checkout')" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary flex items-center gap-1">
+        <span class="material-symbols-outlined text-base">arrow_back</span> Back to Checkout
+    </button>
+</div>
+<div id="orders-loading" class="text-center text-on-surface-variant py-16">Loading orders...</div>
+<div id="orders-empty" class="hidden text-center text-on-surface-variant py-16">
+    <span class="material-symbols-outlined text-5xl mb-4 block">inventory_2</span>
+    No orders yet. Place an order to see it here.
+</div>
+<div id="orders-table-wrap" class="hidden overflow-x-auto border border-outline-variant">
+<table class="w-full text-left border-collapse">
+    <thead>
+        <tr class="bg-surface-container-lowest border-b border-outline-variant">
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Order ID</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Date</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Customer</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Items</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Ship To</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Payment</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4">Status</th>
+            <th class="font-label-sm text-label-sm uppercase px-4 py-4 text-right">Total</th>
+        </tr>
+    </thead>
+    <tbody id="orders-table-body"></tbody>
+</table>
+</div>
+</div>
+
+</main>
+
+<footer class="bg-primary dark:bg-surface-container-lowest text-on-primary dark:text-primary w-full pt-stack-xl pb-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-lg mb-6">VOGUE STREET</div>
+<p class="font-body-md text-body-md opacity-80 max-w-xs">Elevating urban aesthetics through high-fashion editorial and curated minimalism since 2014.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-lg uppercase tracking-widest mb-4">Explore</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">About Us</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">Store Locator</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-lg uppercase tracking-widest mb-4">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">Contact</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity hover:text-tertiary-fixed duration-300" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-lg uppercase tracking-widest mb-4">Newsletter</h4>
+<p class="font-body-md text-sm opacity-80 mb-4">Join the inner circle for exclusive releases.</p>
+<div class="flex border-b border-on-primary border-opacity-30 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-on-primary placeholder:opacity-50" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="material-symbols-outlined">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-stack-md pt-8 border-t border-on-primary border-opacity-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+<span class="font-body-md text-body-md opacity-60">Â© 2024 VOGUE STREET. ALL RIGHTS RESERVED.</span>
+<div class="flex space-x-6">
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer transition-opacity">public</span>
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer transition-opacity">nest_eco</span>
+<span class="material-symbols-outlined opacity-60 hover:opacity-100 cursor-pointer transition-opacity">alternate_email</span>
+</div>
+</div>
+</footer>
+
+<!-- Adjust this path to wherever your project actually serves api.js -->
+<script src="/static/js/api.js"></script>
+<script>
+    function renderOrderSummary(cartItems) {
+        const itemsContainer = document.getElementById('order-summary-items');
+        const subtotalEl = document.getElementById('summary-subtotal');
+        const totalEl = document.getElementById('summary-total');
+        if (!itemsContainer || !subtotalEl || !totalEl) return 0;
+
+        if (!Array.isArray(cartItems) || cartItems.length === 0) {
+            itemsContainer.innerHTML = '<p class="text-on-surface-variant text-sm">Your cart is empty. <a href="/products-page" class="underline">Add something</a> before checking out.</p>';
+            subtotalEl.innerText = fmtMoney(0);
+            totalEl.innerText = fmtMoney(0);
+            return 0;
+        }
+
+        let subtotal = 0;
+        itemsContainer.innerHTML = cartItems.map(item => {
+            subtotal += item.price * item.quantity;
+            return `
+            <div class="flex items-start space-x-4">
+                <div class="w-24 h-24 overflow-hidden bg-surface-container">
+                    <img alt="${item.name}" class="w-full h-full object-cover" src="${item.image || 'https://via.placeholder.com/200'}"/>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-label-lg text-label-lg uppercase">${item.name}</h3>
+                    <p class="text-on-surface-variant font-body-md text-sm mt-1">Qty: ${item.quantity}</p>
+                    <p class="font-label-lg text-label-lg mt-2">${fmtMoney(item.price * item.quantity)}</p>
+                </div>
+            </div>`;
+        }).join('');
+
+        subtotalEl.innerText = fmtMoney(subtotal);
+        totalEl.innerText = fmtMoney(subtotal);
+        return subtotal;
+    }
+
+    async function loadOrderSummary() {
+        try {
+            const cartItems = await fetchCart();
+            renderOrderSummary(cartItems);
+        } catch (err) {
+            console.error('Failed to load cart for checkout summary:', err);
+            renderOrderSummary([]);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadOrderSummary);
+    function fmtMoney(n) {
+        return formatINR(n);
+    }
+
+    function showToast(message, variant) {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        const icon = variant === 'error' ? 'error' : 'check_circle';
+        toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span><span class="font-body-md text-sm">${message}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('toast-out');
+            toast.addEventListener('animationend', () => toast.remove());
+        }, 3200);
+    }
+
+    function showView(name) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.getElementById('view-' + name).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (name === 'orders') loadOrders();
+    }
+
+    function clearErrors(form) {
+        form.querySelectorAll('.field-error-msg').forEach(el => el.classList.remove('show'));
+        form.querySelectorAll('.luxury-input').forEach(el => el.classList.remove('field-error'));
+        document.getElementById('submit-error').classList.add('hidden');
+    }
+
+    function setFieldError(id) {
+        const input = document.getElementById(id);
+        const msg = document.querySelector(`[data-error-for="${id}"]`);
+        if (input) input.classList.add('field-error');
+        if (msg) msg.classList.add('show');
+    }
+
+    function validateForm(data) {
+        const errors = [];
+        if (!data.fullName || data.fullName.trim().length < 2) errors.push('fullName');
+        if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.push('email');
+        if (!data.phone || data.phone.trim().length < 6) errors.push('phone');
+        if (!data.city || !data.city.trim()) errors.push('city');
+        if (!data.address || !data.address.trim()) errors.push('address');
+        if (!data.state || !data.state.trim()) errors.push('state');
+        if (!data.postalCode || !data.postalCode.trim()) errors.push('postalCode');
+
+        if (data.payment === 'Credit Card') {
+            const digits = (data.cardNumber || '').replace(/\s/g, '');
+            if (!/^\d{16}$/.test(digits)) errors.push('cardNumber');
+            if (!/^(0[1-9]|1[0-2])\s*\/\s*\d{2}$/.test((data.expiry || '').trim())) errors.push('expiry');
+            if (!/^\d{3,4}$/.test((data.cvv || '').trim())) errors.push('cvv');
+        }
+        return errors;
+    }
+
+    const form = document.getElementById('checkoutForm');
+    const placeOrderBtn = document.getElementById('placeOrderBtn');
+    const placeOrderLabel = document.getElementById('placeOrderLabel');
+    const submitError = document.getElementById('submit-error');
+
+    // Kept for the confirmation screen only (backend doesn't store name/email/phone
+    // per order â€” it only stores address + payment_method). We hang onto what the
+    // user typed so the confirmation view can still show it after a successful order.
+    let lastCustomerInfo = null;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearErrors(form);
+
+        const paymentEl = form.querySelector('input[name="payment"]:checked');
+        const data = {
+            fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            city: document.getElementById('city').value,
+            address: document.getElementById('address').value,
+            state: document.getElementById('state').value,
+            postalCode: document.getElementById('postalCode').value,
+            payment: paymentEl ? paymentEl.value : '',
+            cardNumber: document.getElementById('cardNumber').value,
+            expiry: document.getElementById('expiry').value,
+            cvv: document.getElementById('cvv').value,
+        };
+
+        const errors = validateForm(data);
+        if (errors.length) {
+            errors.forEach(setFieldError);
+            submitError.textContent = 'Please fix the highlighted fields before placing your order.';
+            submitError.classList.remove('hidden');
+            errors[0] && document.getElementById(errors[0]).scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        // Backend's OrderCreate schema only takes address + payment_method,
+        // so we combine the address fields into one string for it.
+        const fullAddress = `${data.address.trim()}, ${data.city.trim()}, ${data.state.trim()} ${data.postalCode.trim()}`;
+
+        lastCustomerInfo = {
+            fullName: data.fullName.trim(),
+            email: data.email.trim(),
+            phone: data.phone.trim(),
+            payment: data.payment,
+            cardLast4: data.payment === 'Credit Card' ? data.cardNumber.replace(/\s/g, '').slice(-4) : null,
+            address: fullAddress,
+        };
+
+        placeOrderBtn.disabled = true;
+        placeOrderLabel.innerHTML = '<span class="spinner"></span> Placing Order...';
+
+        try {
+            // Real backend call: POST /orders/create
+            const order = await createOrder({
+                address: fullAddress,
+                payment_method: data.payment,
+            });
+
+            showToast(`Order placed successfully! Order #${order.id} saved to the orders table.`, 'success');
+            renderConfirmation(order);
+            showView('confirmation');
+            form.reset();
+            document.getElementById('card').checked = true;
+        } catch (err) {
+            console.error('Order save failed:', err);
+
+            if (String(err.message || '').toLowerCase().includes('login')) {
+                window.location.href = '/login';
+                return;
+            }
+
+            const message = String(err.message || '').toLowerCase().includes('cart is empty')
+                ? 'Your cart is empty â€” add something before checking out.'
+                : (err.message || 'Something went wrong saving your order. Please try again.');
+
+            submitError.textContent = message;
+            submitError.classList.remove('hidden');
+            showToast(message, 'error');
+        } finally {
+            placeOrderBtn.disabled = false;
+            placeOrderLabel.textContent = 'Place Order';
+        }
+    });
+
+    function renderConfirmation(order) {
+        document.getElementById('conf-email').textContent = lastCustomerInfo ? lastCustomerInfo.email : '';
+        document.getElementById('conf-order-id').textContent = '#' + order.id;
+        document.getElementById('conf-order-date').textContent = new Date().toLocaleString();
+        document.getElementById('conf-shipping').textContent =
+            `${lastCustomerInfo ? lastCustomerInfo.fullName : ''}, ${order.address}`;
+        document.getElementById('conf-payment').textContent = (lastCustomerInfo && lastCustomerInfo.cardLast4)
+            ? `${order.payment_method} ending in ${lastCustomerInfo.cardLast4}`
+            : order.payment_method;
+        document.getElementById('conf-total').textContent = fmtMoney(order.total);
+    }
+
+    async function loadOrders() {
+        const loading = document.getElementById('orders-loading');
+        const empty = document.getElementById('orders-empty');
+        const tableWrap = document.getElementById('orders-table-wrap');
+        const tbody = document.getElementById('orders-table-body');
+
+        loading.classList.remove('hidden');
+        empty.classList.add('hidden');
+        tableWrap.classList.add('hidden');
+        tbody.innerHTML = '';
+
+        try {
+            // Real backend call: GET /orders/
+            const orders = await fetchOrders();
+
+            loading.classList.add('hidden');
+
+            if (!Array.isArray(orders) || !orders.length) {
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            tbody.innerHTML = orders.map(o => `
+                <tr>
+                    <td class="font-semibold">#${o.id}</td>
+                    <td class="text-on-surface-variant whitespace-nowrap">â€”</td>
+                    <td class="text-on-surface-variant text-xs">You</td>
+                    <td>
+                        <div class="space-y-3">
+                            ${(o.items || []).map(i => `
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 shrink-0 overflow-hidden bg-surface-container">
+                                        <img src="${i.image || 'https://placehold.co/48x48?text=%20'}" alt="${i.name}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/48x48?text=%20'"/>
+                                    </div>
+                                    <div class="text-xs">
+                                        <div class="font-label-lg text-label-lg uppercase text-[11px]">${i.name}</div>
+                                        <div class="text-on-surface-variant">Qty ${i.quantity} &middot; ${fmtMoney(i.price)} each</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </td>
+                    <td class="text-on-surface-variant">${o.address}</td>
+                    <td class="text-on-surface-variant">${o.payment_method}</td>
+                    <td><span class="status-pill">${o.status}</span></td>
+                    <td class="text-right font-semibold whitespace-nowrap">${fmtMoney(o.total)}</td>
+                </tr>
+            `).join('');
+            tableWrap.classList.remove('hidden');
+        } catch (err) {
+            console.error('Failed to load orders:', err);
+            loading.classList.add('hidden');
+
+            if (String(err.message || '').toLowerCase().includes('login')) {
+                window.location.href = '/login';
+                return;
+            }
+            empty.classList.remove('hidden');
+        }
+    }
+
+    const paymentRadios = document.querySelectorAll('.payment-radio');
+    const cardSection = document.getElementById('card-details');
+    paymentRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.id === 'card') {
+                cardSection.style.opacity = '1';
+                cardSection.style.pointerEvents = 'auto';
+            } else {
+                cardSection.style.opacity = '0.3';
+                cardSection.style.pointerEvents = 'none';
+            }
+        });
+    });
+
+    document.querySelectorAll('.luxury-input').forEach(input => {
+        input.addEventListener('focus', () => {
+            const label = input.parentElement.querySelector('label');
+            if (label) label.classList.add('text-primary');
+        });
+        input.addEventListener('blur', () => {
+            const label = input.parentElement.querySelector('label');
+            if (label) label.classList.remove('text-primary');
+        });
+    });
+</script>
+</body></html>

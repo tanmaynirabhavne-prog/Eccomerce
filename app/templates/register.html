@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VOGUE STREET | Join the Circle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#7e7576",
+                    "secondary-container": "#e1e1c9",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#5e5e5e",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary-fixed-dim": "#c8c8b0",
+                    "secondary-fixed": "#e4e4cc",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1b1b1b",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "secondary": "#5e604d",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "tertiary-fixed": "#ffe088",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-error": "#ffffff",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-primary-container": "#848484",
+                    "outline-variant": "#cfc4c5",
+                    "on-secondary-container": "#636451",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "surface-bright": "#f9f9f9",
+                    "background": "#f9f9f9",
+                    "tertiary-container": "#241a00",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary": "#000000",
+                    "on-tertiary-container": "#a08000",
+                    "on-surface-variant": "#4c4546",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#474836",
+                    "surface-container": "#eeeeee",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed": "#1b1d0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xl": "120px",
+                    "margin-mobile": "20px",
+                    "stack-md": "40px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "stack-lg": "80px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Montserrat"],
+                    "display-xl": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "label-lg": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "label-sm": ["Montserrat"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f9f9f9; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ken-burns {
+            animation: kenBurns 20s infinite alternate;
+        }
+        @keyframes kenBurns {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .form-input {
+            border: none;
+            border-bottom: 1px solid #cfc4c5;
+            background: transparent;
+            transition: border-color 0.4s ease;
+            border-radius: 0;
+        }
+        .form-input:focus {
+            outline: none;
+            border-bottom: 1px solid #000000;
+            box-shadow: none;
+            ring: 0;
+        }
+        .btn-primary {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .register-error {
+            display: none;
+            color: #ba1a1a;
+            font-size: 13px;
+            margin-top: -0.5rem;
+        }
+        .register-error.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface overflow-hidden">
+<!-- Split Screen Container -->
+<main class="flex h-screen w-full overflow-hidden">
+<!-- Left Side: Editorial Image -->
+<section class="hidden lg:block lg:w-1/2 relative overflow-hidden h-full">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="High-fashion editorial" class="w-full h-full object-cover ken-burns" src="https://lh3.googleusercontent.com/aida/AP1WRLsQWyfBUmwYrsSuLnyyE_VXgXjxFNA1wEZEIwo6zQNoaM0TKUtWY4VDvkMsGZHUFD1TZeUU2RohSVxglSaCtYvJ_x_xLA_4fL7aNq2l5S4-ZdEqslXN1pjq6XkF2CB-QsSBGTujRXjFlCVzCXdvgFbfm4eTV5oh5RwGC6weaKqvAbzQix8tjYwJXZWLOEC9C2-XwgVOE-dUE4eoE7Y6ujuAwMeptVwJEUlqru3QLfEEaAmKFMk-FS28CI82"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end px-margin-desktop py-stack-md text-white fade-in-up">
+<h1 class="font-display-xl text-display-xl mb-4">Experience Excellence</h1>
+<p class="font-body-lg text-body-lg max-w-md opacity-90 tracking-wide uppercase font-light">
+                    Join the Circle of curated fashion and exclusive street style.
+                </p>
+</div>
+</section>
+<!-- Right Side: Registration Form -->
+<section class="w-full lg:w-1/2 h-full bg-surface-container-lowest flex flex-col overflow-y-auto px-margin-mobile md:px-margin-desktop py-12 relative">
+<!-- Branding -->
+<div class="flex justify-between items-center mb-stack-md">
+<a class="font-display-lg text-headline-md font-bold tracking-tighter text-primary" href="/">VOGUE STREET</a>
+<a class="font-label-lg text-label-lg text-primary border-b border-primary hover:opacity-70 transition-opacity" href="/login">Login</a>
+</div>
+<!-- Form Content -->
+<div class="max-w-md mx-auto w-full my-auto fade-in-up" style="animation-delay: 0.2s;">
+<header class="mb-10">
+<h2 class="font-headline-lg text-headline-lg mb-2">Create Account</h2>
+<p class="font-body-md text-on-surface-variant">Step into the world of premium street couture.</p>
+</header>
+<form class="space-y-8" id="registerForm">
+<div class="space-y-6">
+<div class="relative">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-1" for="fullname">Full Name</label>
+<input class="form-input w-full py-2 font-body-md" id="fullname" placeholder="Enter your full name" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-1" for="email">Email Address</label>
+<input class="form-input w-full py-2 font-body-md" id="email" placeholder="name@vogue.com" type="email"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-1" for="password">Password</label>
+<input class="form-input w-full py-2 font-body-md" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="relative">
+<label class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-1" for="confirm-password">Confirm Password</label>
+<input class="form-input w-full py-2 font-body-md" id="confirm-password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<p id="register-error" class="register-error"></p>
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 h-4 w-4 rounded border-outline text-primary focus:ring-0 transition-all cursor-pointer" id="terms" type="checkbox"/>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="terms">
+                            I agree to the <a class="underline hover:text-primary transition-colors" href="#">Terms of Service</a> and <a class="underline hover:text-primary transition-colors" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<button class="btn-primary w-full bg-primary text-on-primary font-label-lg text-label-lg uppercase tracking-widest py-5 flex justify-center items-center gap-2 group" id="registerBtn" type="submit">
+                        <span id="registerBtnLabel">Create Account</span>
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-10 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.2em] opacity-60">
+                    © 2024 VOGUE STREET. ALL RIGHTS RESERVED.
+                </p>
+</div>
+</section>
+</main>
+<!-- Adjust this path to wherever your project actually serves api.js -->
+<script src="/static/js/api.js"></script>
+<script>
+        // Micro-interactions for form focus
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.add('text-primary');
+                input.parentElement.querySelector('label').classList.remove('text-on-surface-variant');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.remove('text-primary');
+                input.parentElement.querySelector('label').classList.add('text-on-surface-variant');
+            });
+        });
+
+        // Create Account -> POST /auth/register (via registerUser() in api.js) -> stored in users table
+        const registerForm = document.getElementById('registerForm');
+        const registerBtn = document.getElementById('registerBtn');
+        const registerBtnLabel = document.getElementById('registerBtnLabel');
+        const registerError = document.getElementById('register-error');
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            registerError.classList.remove('show');
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const termsAccepted = document.getElementById('terms').checked;
+
+            if (!fullname || !email || !password || !confirmPassword) {
+                registerError.textContent = 'Please fill in all fields.';
+                registerError.classList.add('show');
+                return;
+            }
+            if (password !== confirmPassword) {
+                registerError.textContent = 'Passwords do not match.';
+                registerError.classList.add('show');
+                return;
+            }
+            if (!termsAccepted) {
+                registerError.textContent = 'Please agree to the Terms of Service and Privacy Policy.';
+                registerError.classList.add('show');
+                return;
+            }
+
+            registerBtn.disabled = true;
+            registerBtnLabel.textContent = 'Creating Account...';
+
+            try {
+                // Backend's UserCreate schema expects: username, email, password
+                await registerUser({
+                    username: fullname,
+                    email: email,
+                    password: password,
+                });
+
+                window.location.href = '/login';
+            } catch (err) {
+                console.error('Registration failed:', err);
+                registerError.textContent = err.message || 'Could not create account. Please try again.';
+                registerError.classList.add('show');
+            } finally {
+                registerBtn.disabled = false;
+                registerBtnLabel.textContent = 'Create Account';
+            }
+        });
+    </script>
+</body></html>

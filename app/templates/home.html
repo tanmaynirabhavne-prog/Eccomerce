@@ -1,0 +1,646 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VOGUE STREET | Luxury Fashion Redefined</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-primary-container": "#848484",
+                      "inverse-surface": "#2f3131",
+                      "secondary-container": "#e1e1c9",
+                      "tertiary-container": "#241a00",
+                      "on-primary-fixed": "#1b1b1b",
+                      "outline": "#7e7576",
+                      "surface-container-low": "#f3f3f4",
+                      "surface-container-high": "#e8e8e8",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-tint": "#5e5e5e",
+                      "on-secondary-fixed": "#1b1d0e",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-background": "#1a1c1c",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "secondary-fixed-dim": "#c8c8b0",
+                      "on-secondary-container": "#636451",
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f0f1f1",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#a08000",
+                      "on-error": "#ffffff",
+                      "primary-container": "#1b1b1b",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#474747",
+                      "background": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "secondary": "#5e604d",
+                      "primary-fixed": "#e2e2e2",
+                      "primary": "#000000",
+                      "tertiary-fixed": "#ffe088",
+                      "outline-variant": "#cfc4c5",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#474836",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container": "#eeeeee",
+                      "on-surface-variant": "#4c4546",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dadada",
+                      "secondary-fixed": "#e4e4cc",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-surface": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "stack-xl": "120px",
+                      "stack-md": "40px",
+                      "stack-lg": "80px",
+                      "margin-mobile": "20px",
+                      "gutter": "32px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Montserrat"],
+                      "body-md": ["Montserrat"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "display-xl": ["Playfair Display"],
+                      "body-lg": ["Montserrat"],
+                      "display-lg": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-lg": ["Montserrat"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ken-burns:hover img {
+            transform: scale(1.05);
+            transition: transform 0.8s ease-in-out;
+        }
+        .luxury-button {
+            transition: all 0.4s ease-in-out;
+            border: 1px solid #000;
+        }
+        .luxury-button:hover {
+            background-color: transparent !important;
+            color: #000 !important;
+            transform: scale(1.02);
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        /* The original Google-generated image URLs expire and return 403. */
+        #home-hero {
+            background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85') !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-sm border-b border-outline-variant/30 px-margin-desktop py-4 flex justify-between items-center max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+<div class="font-display-lg text-headline-md font-bold tracking-tighter text-primary">VOGUE STREET</div>
+<div class="hidden md:flex gap-8 font-body-md text-body-md uppercase tracking-widest text-on-surface-variant">
+<a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="/home">Home</a>
+<a class="hover:text-primary transition-colors duration-300" href="/products-page">Products</a>
+<a class="hover:text-primary transition-colors duration-300" href="/men">Men</a>
+<a class="hover:text-primary transition-colors duration-300" href="/women">Women</a>
+<a class="hover:text-primary transition-colors duration-300" href="/shoes">Shoes</a>
+<a class="hover:text-primary transition-colors duration-300" href="/products-page?category=Clothing">Clothing</a>
+<a class="hover:text-primary transition-colors duration-300" href="/products-page?category=New%20Arrivals">New Arrivals</a>
+<a class="hover:text-primary transition-colors duration-300" href="/products-page?category=Offers">Offers</a>
+</div>
+<div class="flex items-center gap-6">
+<a href="/cart-page" class="relative">
+    <span class="material-symbols-outlined text-primary scale-102 transition-transform duration-400 ease-in-out">shopping_cart</span>
+    <span id="cart-count-badge" class="absolute -right-3 -top-3 inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-primary text-[0.75rem] text-white font-semibold">0</span>
+</a>
+<button class="material-symbols-outlined p-2 text-primary scale-102 transition-transform duration-400 ease-in-out" onclick="window.location.href='/login'">
+    person
+</button></div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<div id="home-hero" class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85')">
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+</div>
+<div class="relative z-10 px-margin-desktop w-full max-w-container-max mx-auto text-on-primary">
+<div class="max-w-2xl fade-in-up">
+<h1 class="font-display-xl text-display-xl mb-4 leading-none">Step Into Your Style</h1>
+<p class="font-body-lg text-body-lg mb-10 opacity-90">Premium Shoes &amp; Clothing Collection</p>
+<div class="flex flex-wrap gap-4">
+<button onclick="window.location.href='/shoes'" class="luxury-button bg-primary text-on-primary px-10 py-4 font-label-lg text-label-lg uppercase tracking-widest stagger-1">Shop Shoes</button>
+<button onclick="window.location.href='/products-page'" class="luxury-button border-on-primary text-on-primary px-10 py-4 font-label-lg text-label-lg uppercase tracking-widest stagger-2 bg-transparent">Explore Clothing</button>
+</div>
+</div>
+</div>
+<!-- Floating 3D Animation Component -->
+<div class="absolute right-20 top-1/2 -translate-y-1/2 z-20 w-64 h-64 floating-element hidden lg:block opacity-60 mix-blend-overlay">
+
+</div>
+</header>
+<!-- Trending Products (Bento Grid) -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-stack-md flex justify-between items-end">
+<div class="fade-in-up">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">The Trending Edit</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Curated selection of our most wanted pieces this season.</p>
+</div>
+<a class="font-label-lg text-label-lg border-b border-primary uppercase tracking-widest pb-1 hover:opacity-60 transition-opacity" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-[800px]">
+<!-- Large Feature -->
+<div class="trending-product md:col-span-7 relative group overflow-hidden ken-burns cursor-pointer" data-product-name="Signature Hoodie">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLuQ7jI9t4uH2c18elxzuyhGXfY-Oh0ebBX6U93lMxVeTks2USm_6DRusnA8g__YY759jNLCi4c1M8lay3NrE-WU8MwWBHqdZD8zR0bin9pw9FIubRfBmhFWwHvSfXuN_Yxs4t1fE78R7jhKs5bxNbiLPS2itoseiUM84YqBEDW8e5SkMqcHu7PWiNH5OFacUJ37Ae6bKu2qghBbL0t_qE_rTkvLPix6n9JUdSgF47zzSfY2JW3wbjAVGus"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute bottom-10 left-10 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase bg-primary px-3 py-1 mb-4 inline-block">Best Seller</span>
+<h3 class="font-headline-md text-headline-md">The Minimalist Hoodie</h3>
+<p class="font-body-md text-body-md">₹15,355.00</p>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-rows-2 gap-gutter">
+<!-- Top Right -->
+<div class="trending-product relative group overflow-hidden ken-burns cursor-pointer" data-product-name="Men Sneakers">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtg26-QXXGNf_ifKumZ0qUl-W6faLNADwsO3AAWh4Z8rNJpWFEAeM9qS-_psYhAuEaR4cE824sH4k6jDz8fIVou0nEmSFRCfKRW4GFwc_X3Ld6JDcb3tfQAGzqeDpiZ7enWxHb3QyFLO5Yt-ndm6oUFQYFepOI9r4J1BwyhkxWn593bVMc1LJllNQWjsUAzuAP7WJS4HBrHGFgyAedX-AoXTOl8CgKZ3yP7sRi2P214kBM0yaWBdQySiI-Z"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-label-lg text-label-lg text-primary uppercase">Studio Sneakers</h3>
+<p class="font-body-md text-body-md">₹19,920.00</p>
+</div>
+</div>
+<!-- Bottom Right -->
+<div class="trending-product relative group overflow-hidden ken-burns cursor-pointer" data-product-name="Men Leather Loafers">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtuC_kO55F5cNglFJ4jv7PdWuJQ7OXPu7gSWt7l5mXRItkJoZR3iUqDFdS2GNXOCdpGntLU-g-FX8yzXqRWRwX_GEX6HtOsoI7KGJhDNQUjZdafulQ22oQV4TVsKNc5NnWVn-28blvaGapE9jvTrwdrVIpWU_nYsdpBZ2cTI6NZePaMEUXb3W4HQYOD_XXGonaeZsRrQEFzkKVdVjNmUbvRAoFxZ8ypYoSAWphaJY5QHvRbhLOO4pZbkLE"/>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-label-lg text-label-lg text-primary uppercase">Leather Formals</h3>
+<p class="font-body-md text-body-md">₹25,730.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products (Live from Database) -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-stack-md flex justify-between items-end">
+<div class="fade-in-up">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Featured Products</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Shop our full collection, fresh from the store.</p>
+</div>
+<a class="font-label-lg text-label-lg border-b border-primary uppercase tracking-widest pb-1 hover:opacity-60 transition-opacity" href="/products-page">View All</a>
+</div>
+<div id="featured-products-grid" class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<p class="col-span-full text-on-surface-variant">Loading products...</p>
+</div>
+</section>
+<!-- New Arrivals (Horizontal Gallery) -->
+<section class="bg-surface-container-low py-stack-xl overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">New Arrivals</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">The latest pieces from our product catalogue.</p>
+</div>
+<div id="new-arrivals-grid" class="flex gap-gutter px-margin-desktop overflow-x-auto pb-10 no-scrollbar scroll-pl-16">
+<!-- Product Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] group cursor-pointer bg-surface-container-lowest">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist high-fashion studio shot of a tailored charcoal wool overcoat draped over a designer chair. Soft key lighting highlights the fabric texture. The aesthetic is clean, luxurious, and editorial, using a palette of deep greys and warm off-whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIC4M95AV2bOnVUUoCWTD2Dgafjsx0g1cSZKrBKLqzGNKdftWRPrudRAJsM5Bc2oRY8roLTgVOKsH0HEgPRIRfgar7jrKeQqqV_PZTDJBl6MXo2DheSkpgnuia87ovgRrHqzA3c0_IQRECJalq-JoP5UA9YHQhX_BZ89w6pW5oefi8Dfwf1Umu0_mxhHOaT0EjV-O7Dm1hYPygHRBPphcXHKZvnGZlN_jtvOQp7Z9c1HZyayFk-XFuxhz9pqnHlW-drk7dXjOPmppK"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Outerwear</span>
+<h3 class="font-label-lg text-label-lg mt-2 mb-1">Tailored Wool Coat</h3>
+<p class="font-body-md text-body-md">$850.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[320px] md:min-w-[400px] group cursor-pointer bg-surface-container-lowest">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional editorial photography of a pair of slim-fit italian silk trousers in cream white. Minimalist studio background with soft atmospheric lighting creating a high-end fashion gallery vibe. The image focus is on the crisp pleats and premium finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS7-cNG4wwXUcjzf5yB_MiZHc41ANXYe5yb3J73eWQqMEUc1Tx8a6346N1yLZW-utO67kt0TM7sFZT4Ic5IKZf8tb2W2pb754B8VL8IR_CyuN2bltNKNUiL3kTUUa1e28v4fpAdPt-YCO9853zp6czCBjXRnDB7R6C10-w0_YINhSNSqSd6k6eJfpgz1eL0Gm3Jf-sR7nZJmxw-SXpD8FgHMU8340vpoCYGR98mhtlAjderEVIwpMFp4vrlaH9gMb9BA2OK3QHuqqq"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Trousers</span>
+<h3 class="font-label-lg text-label-lg mt-2 mb-1">Silk Pleated Trousers</h3>
+<p class="font-body-md text-body-md">$420.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[320px] md:min-w-[400px] group cursor-pointer bg-surface-container-lowest">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up product shot of a luxury black leather weekend bag with gold hardware details. Deep black shadows and bright high-key highlights. High-fashion brand aesthetic with emphasis on craftsmanship and premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3x-iVsqLflkqOED3JRR5JT9rDfb-vgW9ab5o9hXIbSFJ97pDTE-x9mDQsTWlFdSl9IlQoAgSYEjBTJtPD_XJqh-TSZA_7yG3AAfZwQMtuwWJk9riee9t_l6wM8_SWXqlpT_WCfBdBkZfzPJh2j3BYygefTgGmPUAQL52LFCyX_xrtrlnjNQRJT9xhzyciJOX2smwzkQ05jG1obysiZNdO29-EoICOtNc3mLiHMslokMT3-kV8g2PXZlLN4kaHfRveh4_TDLqh7mbG"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Accessories</span>
+<h3 class="font-label-lg text-label-lg mt-2 mb-1">Leather Weekender</h3>
+<p class="font-body-md text-body-md">$1,200.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="min-w-[320px] md:min-w-[400px] group cursor-pointer bg-surface-container-lowest">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A portrait of a male model wearing a premium cashmere turtleneck sweater in charcoal grey. Soft focus studio background with a sophisticated, intellectual mood. The lighting is warm and cinematic, emphasizing the soft texture of the knitwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpsPW273JlWVfZfhv8XywHtNjpYGQgFwmR_lGmJt34Z7OwuAGHzcXIgSDwlyns97KsMlh-3o6oS32jO0gz_9LwGVdL_gliCYEdrpxfxueEwcMA2pxlbh-WVYYWEOMMFmkXNiWeSTYHldp4y3ZtHx-OvMYlMpSEpIc-01vYdbdDjmJq5ifZDAKsYmg5NZ0Xs7k6pQtVjvczp1ZInPC8puc3Z81WUdoDMKqxPJhKJer9dYzsZKS6dcq6JlD-HKcUwon_HVsdVb_dVwa"/>
+<button class="absolute bottom-4 right-4 bg-primary text-on-primary p-3 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Knitwear</span>
+<h3 class="font-label-lg text-label-lg mt-2 mb-1">Cashmere Turtleneck</h3>
+<p class="font-body-md text-body-md">$550.00</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Fashion Categories (Asymmetric Layout) -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="order-2 md:order-1 relative h-[700px] ken-burns group">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsQWyfBUmwYrsSuLnyyE_VXgXjxFNA1wEZEIwo6zQNoaM0TKUtWY4VDvkMsGZHUFD1TZeUU2RohSVxglSaCtYvJ_x_xLA_4fL7aNq2l5S4-ZdEqslXN1pjq6XkF2CB-QsSBGTujRXjFlCVzCXdvgFbfm4eTV5oh5RwGC6weaKqvAbzQix8tjYwJXZWLOEC9C2-XwgVOE-dUE4eoE7Y6ujuAwMeptVwJEUlqru3QLfEEaAmKFMk-FS28CI82"/>
+<div class="absolute inset-0 border-[20px] border-surface m-6"></div>
+<div class="absolute -bottom-10 -right-10 bg-primary text-on-primary p-12 max-w-xs stagger-3">
+<h3 class="font-headline-md text-headline-md mb-4">The Editorial Look</h3>
+<p class="font-body-md text-body-md mb-6 opacity-80">Discover curated outfits that bridge the gap between street and runway.</p>
+<a class="font-label-lg text-label-lg uppercase border-b border-on-primary pb-2 inline-block" href="#">Explore Edit</a>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="mb-12 stagger-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-[0.2em] block mb-4">Collections 2024</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Redefining Urban Elegance</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed">VOGUE STREET represents the modern duality of styleâ€”merging high-end tailoring with the raw energy of urban culture. Every piece is a statement of intent.</p>
+</div>
+<div class="h-[400px] relative overflow-hidden group ken-burns stagger-2">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvod6YSceS2R5C9XBlM04Sy8GWfHKmgD_kzQL_xo3pgCu1kWMorwfKSHv4GmF9gIvHrD_iKeUO0GHp9U-nndgUyWOWFlTi_iJQgLNTf2fX59zGO7cRVKWqfeNeKpfJBbEsHn5qv6trRJgb5ij-2pRAMnoEaI8DBXW-AokP8mi6bs7RW4j4HkWtwIvNTCvuRJ40NnNAMRFix-EWwrVyCLJzTLBqDS2RAwDxFcHxyEsT6LtEJdO8th8FNaFKW"/>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-lg text-label-lg text-on-primary border border-on-primary px-8 py-3">View Denim Series</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Best Sellers (Clean List) -->
+<section class="bg-primary text-on-primary py-stack-xl">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8">
+<h2 class="font-headline-lg text-headline-lg">Our Best Sellers</h2>
+<div class="flex gap-8 font-label-lg text-label-lg uppercase tracking-widest text-on-primary-container">
+<button class="text-on-primary border-b border-on-primary pb-1">Footwear</button>
+<button class="hover:text-on-primary transition-colors">Apparel</button>
+<button class="hover:text-on-primary transition-colors">Accessories</button>
+</div>
+</div>
+<div class="space-y-0">
+<!-- List Item 1 -->
+<div class="group border-b border-on-primary-container py-8 flex items-center justify-between hover:bg-on-primary-container/10 transition-colors px-4 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-sm text-label-sm text-on-primary-container">01</span>
+<h3 class="font-headline-md text-headline-md uppercase">Vortex Tech Sneakers</h3>
+</div>
+<div class="flex items-center gap-20">
+<p class="font-body-lg text-body-lg hidden md:block text-on-primary-container">High-Performance Footwear</p>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="group border-b border-on-primary-container py-8 flex items-center justify-between hover:bg-on-primary-container/10 transition-colors px-4 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-sm text-label-sm text-on-primary-container">02</span>
+<h3 class="font-headline-md text-headline-md uppercase">Signature Leather Biker</h3>
+</div>
+<div class="flex items-center gap-20">
+<p class="font-body-lg text-body-lg hidden md:block text-on-primary-container">Premium Italian Leather</p>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="group border-b border-on-primary-container py-8 flex items-center justify-between hover:bg-on-primary-container/10 transition-colors px-4 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-sm text-label-sm text-on-primary-container">03</span>
+<h3 class="font-headline-md text-headline-md uppercase">Oversized Cashmere Scarf</h3>
+</div>
+<div class="flex items-center gap-20">
+<p class="font-body-lg text-body-lg hidden md:block text-on-primary-container">Winter Essentials</p>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-lowest text-on-primary dark:text-primary w-full pt-stack-xl pb-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto border-b border-on-primary-container/30 pb-stack-md">
+<div>
+<div class="font-display-lg text-headline-lg mb-8">VOGUE STREET</div>
+<p class="font-body-md text-body-md opacity-70 max-w-xs">Elevating the everyday through intentional design and uncompromising quality.</p>
+</div>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<h4 class="font-label-lg text-label-lg uppercase mb-4 text-tertiary-fixed">Shop</h4>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Men's Collection</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Women's Collection</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Sneakers Exclusive</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Accessories</a>
+</div>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<h4 class="font-label-lg text-label-lg uppercase mb-4 text-tertiary-fixed">Company</h4>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">About Us</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#">Store Locator</a>
+</div>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<h4 class="font-label-lg text-label-lg uppercase mb-4 text-tertiary-fixed">Newsletter</h4>
+<p class="opacity-70 mb-4">Join our list for exclusive early access and luxury drops.</p>
+<div class="flex border-b border-on-primary pb-2">
+<input class="bg-transparent border-none focus:ring-0 placeholder:text-on-primary-container/50 w-full text-on-primary" placeholder="Your Email" type="email"/>
+<button class="material-symbols-outlined">arrow_forward</button>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto py-8 flex flex-col md:row justify-between items-center gap-4 text-on-primary-container dark:text-on-primary-fixed-variant font-body-md text-body-md">
+<div class="flex gap-8">
+<a class="hover:text-tertiary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-tertiary-fixed transition-colors" href="#">Contact</a>
+</div>
+<div class="opacity-50">Â© 2024 VOGUE STREET. ALL RIGHTS RESERVED.</div>
+</div>
+</footer>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+        // Google-generated image links used in this template are temporary and
+        // often deny hotlinking. Keep every card visible if one of them expires.
+        const homeImageFallback = 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85';
+        const stableHomeImages = [
+            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=85',
+            'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=85',
+        ];
+        document.querySelectorAll('img[src*="googleusercontent.com"]').forEach((image, index) => {
+            image.src = stableHomeImages[index % stableHomeImages.length];
+        });
+        document.querySelectorAll('img').forEach((image) => {
+            image.addEventListener('error', () => {
+                if (image.src !== homeImageFallback) image.src = homeImageFallback;
+            }, { once: true });
+        });
+
+        // Micro-interaction for Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-sm');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2', 'shadow-sm');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+
+        
+        // Featured Products (live from database)
+        async function loadFeaturedProducts(limit = 8) {
+            const grid = document.getElementById('featured-products-grid');
+            if (!grid) return;
+
+            try {
+                const products = await fetchProducts();
+                if (!products || products.length === 0) {
+                    grid.innerHTML = '<p class="col-span-full text-on-surface-variant">No products available right now.</p>';
+                    return;
+                }
+
+                const featured = products.slice(0, limit);
+                grid.innerHTML = '';
+
+                for (const p of featured) {
+                    const card = document.createElement('div');
+                    card.className = 'group cursor-pointer bg-surface-container-lowest';
+                    card.innerHTML = `
+                        <a href="/product/${p.id}">
+                            <div class="relative overflow-hidden aspect-[3/4]">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                     alt="${p.name}" src="${p.image || homeImageFallback}"
+                                     onerror="this.onerror=null;this.src='${homeImageFallback}'"/>
+                            </div>
+                            <div class="p-4">
+                                <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">${p.category || 'General'}</span>
+                                <h3 class="font-label-lg text-label-lg mt-2 mb-1">${p.name}</h3>
+                                <p class="font-body-md text-body-md">${formatINR(p.price)}</p>
+                            </div>
+                        </a>
+                        <button class="featured-add-to-cart-btn w-full bg-primary text-on-primary py-3 font-label-lg text-label-lg uppercase hover:bg-white hover:text-primary border border-primary transition-all duration-300">
+                            Add to Cart
+                        </button>
+                    `;
+                    grid.appendChild(card);
+
+                    const addBtn = card.querySelector('.featured-add-to-cart-btn');
+                    addBtn.addEventListener('click', async () => {
+                        addBtn.disabled = true;
+                        try {
+                            await addToCart({ product_id: p.id, quantity: 1 });
+                            if (window.updateCartCount) {
+                                await window.updateCartCount();
+                            }
+                            addBtn.innerText = 'Added';
+                            setTimeout(() => {
+                                addBtn.innerText = 'Add to Cart';
+                                addBtn.disabled = false;
+                            }, 2000);
+                        } catch (err) {
+                            alert(err.message || 'Failed to add to cart');
+                            addBtn.disabled = false;
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error('Failed to load featured products:', err);
+                grid.innerHTML = '<p class="col-span-full text-on-surface-variant">Failed to load products.</p>';
+            }
+        }
+
+        // New Arrivals uses real catalogue items instead of duplicated demo cards.
+        async function loadNewArrivals() {
+            const grid = document.getElementById('new-arrivals-grid');
+            if (!grid) return;
+
+            try {
+                const products = await fetchProducts();
+                const arrivalNames = [
+                    'Men Oversized T-Shirt',
+                    'Women Ribbed Top',
+                    'Classic Denim Jacket',
+                    'Canvas High-Top Sneakers',
+                ];
+                const arrivals = arrivalNames
+                    .map((name) => products.find((product) => product.name === name))
+                    .filter(Boolean);
+
+                grid.innerHTML = '';
+                arrivals.forEach((product) => {
+                    const card = document.createElement('a');
+                    card.href = `/product/${product.id}`;
+                    card.className = 'min-w-[320px] md:min-w-[400px] group cursor-pointer bg-surface-container-lowest';
+                    card.innerHTML = `
+                        <div class="relative overflow-hidden aspect-[3/4]">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                 src="${product.image || homeImageFallback}" alt="${product.name}"
+                                 onerror="this.onerror=null;this.src='${homeImageFallback}'">
+                        </div>
+                        <div class="p-6">
+                            <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">${product.category || 'New Arrival'}</span>
+                            <h3 class="font-label-lg text-label-lg mt-2 mb-1">${product.name}</h3>
+                            <p class="font-body-md text-body-md">${formatINR(product.price)}</p>
+                        </div>`;
+                    grid.appendChild(card);
+                });
+
+                if (!arrivals.length) {
+                    grid.innerHTML = '<p class="text-on-surface-variant">No new arrivals are available right now.</p>';
+                }
+            } catch (err) {
+                console.error('Failed to load new arrivals:', err);
+                grid.innerHTML = '<p class="text-on-surface-variant">Failed to load new arrivals.</p>';
+            }
+        }
+
+        // Trending cards point to real store products and can be added directly to the cart.
+        async function setupTrendingProducts() {
+            const cards = [...document.querySelectorAll('.trending-product')];
+            if (!cards.length) return;
+
+            try {
+                const products = await fetchProducts();
+                cards.forEach((card) => {
+                    const product = products.find((item) => item.name === card.dataset.productName);
+                    if (!product) return;
+
+                    card.setAttribute('role', 'link');
+                    card.tabIndex = 0;
+                    const openProduct = () => { window.location.href = `/product/${product.id}`; };
+                    card.addEventListener('click', (event) => {
+                        if (!event.target.closest('.trending-add-to-cart-btn')) openProduct();
+                    });
+                    card.addEventListener('keydown', (event) => {
+                        if (event.key === 'Enter') openProduct();
+                    });
+
+                    const details = card.querySelector('.absolute.bottom-10, .absolute.bottom-6');
+                    if (!details) return;
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'trending-add-to-cart-btn mt-3 border border-primary bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-primary';
+                    button.textContent = 'Add to Cart';
+                    button.addEventListener('click', async (event) => {
+                        event.stopPropagation();
+                        button.disabled = true;
+                        try {
+                            await addToCart({ product_id: product.id, quantity: 1 });
+                            if (window.updateCartCount) await window.updateCartCount();
+                            button.textContent = 'Added';
+                            setTimeout(() => {
+                                button.textContent = 'Add to Cart';
+                                button.disabled = false;
+                            }, 1500);
+                        } catch (error) {
+                            alert(error.message || 'Could not add this product to the cart.');
+                            button.disabled = false;
+                        }
+                    });
+                    details.appendChild(button);
+                });
+            } catch (error) {
+                console.error('Failed to connect trending products:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFeaturedProducts();
+            loadNewArrivals();
+            setupTrendingProducts();
+        });
+window.addEventListener('load', () => {
+            if (window.updateCartCount) {
+                window.updateCartCount();
+            }
+        });
+    </script>
+</body></html>

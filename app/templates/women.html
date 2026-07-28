@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Women | VOGUE STREET</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-primary-container": "#848484",
+                        "inverse-surface": "#2f3131",
+                        "secondary-container": "#e1e1c9",
+                        "tertiary-container": "#241a00",
+                        "on-primary-fixed": "#1b1b1b",
+                        outline: "#7e7576",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-tint": "#5e5e5e",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "on-secondary-container": "#636451",
+                        tertiary: "#000000",
+                        "inverse-on-surface": "#f0f1f1",
+                        error: "#ba1a1a",
+                        "on-tertiary-container": "#a08000",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        background: "#f9f9f9",
+                        surface: "#f9f9f9",
+                        secondary: "#5e604d",
+                        "primary-fixed": "#e2e2e2",
+                        primary: "#000000",
+                        "tertiary-fixed": "#ffe088",
+                        "outline-variant": "#cfc4c5",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474836",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#4c4546",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed": "#e4e4cc",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "stack-xl": "120px",
+                        "stack-md": "40px",
+                        "stack-lg": "80px",
+                        "margin-mobile": "20px",
+                        gutter: "32px",
+                        "container-max": "1440px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-xl": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-lg": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "500" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "500" }],
+                        "display-xl": ["80px", { lineHeight: "90px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0.01em", fontWeight: "400" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", fontWeight: "500" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ken-burns:hover img {
+            transform: scale(1.05);
+            transition: transform 0.8s ease-in-out;
+        }
+        .luxury-button {
+            transition: all 0.4s ease-in-out;
+            border: 1px solid #000;
+        }
+        .luxury-button:hover {
+            background-color: transparent !important;
+            color: #000 !important;
+            transform: scale(1.02);
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .hero-cta {
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-weight: 700;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-sm border-b border-outline-variant/30 px-margin-desktop py-4 flex justify-between items-center max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+    <div class="font-display-lg text-headline-md font-bold tracking-tighter text-primary">VOGUE STREET</div>
+    <div class="hidden md:flex gap-8 font-body-md text-body-md uppercase tracking-widest text-on-surface-variant">
+        <a class="hover:text-primary transition-colors duration-300" href="/home">Home</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/men">Men</a>
+        <a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="/women">Women</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/shoes">Shoes</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/products-page">Products</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/cart-page">Cart</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/checkout">Checkout</a>
+        <a class="hover:text-primary transition-colors duration-300" href="/login">Login</a>
+    </div>
+    <div class="flex items-center gap-6">
+        <a href="/cart-page" class="relative">
+            <span class="material-symbols-outlined text-primary scale-102 transition-transform duration-400 ease-in-out">shopping_cart</span>
+            <span id="cart-count-badge" class="absolute -right-3 -top-3 inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-primary text-[0.75rem] text-white font-semibold">0</span>
+        </a>
+<button class="material-symbols-outlined p-2 text-primary scale-102 transition-transform duration-400 ease-in-out" onclick="window.location.href='/login'">
+    person
+</button>    </div>
+</nav>
+<header class="relative h-screen w-full overflow-hidden flex items-center">
+    <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1495121605193-b116b5b9cba6?auto=format&fit=crop&w=1200&q=80');">
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+    </div>
+    <div class="relative z-10 px-margin-desktop w-full max-w-container-max mx-auto text-on-primary">
+        <div class="max-w-2xl fade-in-up">
+            <span class="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-[0.8rem] uppercase tracking-[0.3em] text-on-primary mb-6">Women's Collection</span>
+            <h1 class="font-display-xl text-display-xl mb-4 leading-none">A fresh edit for modern elegance.</h1>
+            <p class="font-body-lg text-body-lg mb-10 opacity-90">From flowing silhouettes to statement shoes, explore refined wardrobe essentials with editorial polish.</p>
+            <div class="flex flex-wrap gap-4">
+                <button onclick="goTo('/products-page?category=Women')" class="hero-cta bg-primary text-on-primary uppercase tracking-widest">Shop Women</button>
+                <button onclick="goTo('/products-page')" class="hero-cta bg-white text-primary uppercase tracking-widest">Browse All</button>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+    <div class="mb-stack-md flex flex-col gap-4">
+        <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Styled For Her</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Discover elegant daywear, polished footwear, and accessories with luxury detail.</p>
+        </div>
+        <a class="font-label-lg text-label-lg border-b border-primary uppercase tracking-widest pb-1 hover:opacity-60 transition-opacity" href="/products-page?category=Women">View Women's Collection</a>
+    </div>
+    <div id="women-products-grid" class="grid gap-gutter md:grid-cols-3"></div>
+</section>
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto bg-surface-container-low">
+    <div class="mb-stack-md flex flex-col gap-4">
+        <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Explore Catalog</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">More womenswear from our wider catalog, powered by our recommendation engine.</p>
+        </div>
+    </div>
+    <div id="women-catalog-grid" class="grid gap-gutter md:grid-cols-3">
+        <p class="col-span-full text-on-surface-variant">Loading catalog...</p>
+    </div>
+</section>
+<footer class="bg-surface-container-lowest w-full py-stack-md">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+        <p class="text-on-surface-variant text-sm">© 2026 VOGUE STREET. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/main.js"></script>
+<script>
+    function goTo(url) {
+        window.location.href = url;
+    }
+
+    function hashString(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        return Math.abs(hash);
+    }
+
+    function getCatalogImage(articleId) {
+        const IMAGE_POOL = [
+            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1524255684952-d7185b509571?auto=format&fit=crop&w=700&q=85',
+            'https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=700&q=85',
+        ];
+        const idx = hashString(String(articleId || '')) % IMAGE_POOL.length;
+        return IMAGE_POOL[idx];
+    }
+
+    function renderCatalogGrid(container, items) {
+        if (!items || items.length === 0) {
+            container.innerHTML = '<p class="col-span-full text-on-surface-variant">No catalog items found.</p>';
+            return;
+        }
+        container.innerHTML = items.map((item, index) => `
+            <article class="rounded-[28px] overflow-hidden bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)] border border-outline-variant">
+                <a href="/dataset-search/${item.article_id}/open" class="block overflow-hidden">
+                    </a>
+                <div class="p-8">
+                    <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">${item.type || 'Item'}</span>
+                    <h3 class="font-label-lg text-label-lg mt-4 mb-2"><a class="hover:underline" href="/dataset-search/${item.article_id}/open">${item.name}</a></h3>
+                    <p class="text-xs text-on-surface-variant mb-3">${item.colour || ''} &middot; ${item.department || ''}</p>
+                    <p class="font-body-md text-on-surface-variant text-sm">${item.description || ''}</p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-on-surface-variant">From Catalog</span>
+                        <button class="catalog-add-btn text-sm uppercase tracking-widest border-b border-primary hover:opacity-70" data-article-id="${item.article_id}">Add to Cart</button>
+                    </div>
+                </div>
+            </article>`).join('');
+
+        container.querySelectorAll('.catalog-add-btn').forEach((button) => {
+            button.addEventListener('click', async () => {
+                const articleId = button.dataset.articleId;
+                button.disabled = true;
+                button.textContent = 'Adding...';
+                try {
+                    const response = await fetch(`/dataset-search/${articleId}/add-to-cart`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        credentials: 'include',
+                        body: JSON.stringify({ quantity: 1 }),
+                    });
+                    if (response.status === 401) {
+                        window.location.href = '/login';
+                        return;
+                    }
+                    if (!response.ok) {
+                        throw new Error('Failed to add item');
+                    }
+                    if (window.updateCartCount) {
+                        await window.updateCartCount();
+                    }
+                    button.textContent = 'Added';
+                    setTimeout(() => {
+                        button.textContent = 'Add to Cart';
+                        button.disabled = false;
+                    }, 1800);
+                } catch (error) {
+                    button.textContent = 'Add to Cart';
+                    button.disabled = false;
+                    alert('Unable to add this item right now.');
+                }
+            });
+        });
+    }
+
+    async function loadWomenCatalog() {
+        const container = document.getElementById('women-catalog-grid');
+        if (!container) return;
+        try {
+            const response = await fetch('/dataset-search?q=women dress blouse&limit=6', { credentials: 'include' });
+            const data = response.ok ? await response.json() : { results: [] };
+            renderCatalogGrid(container, data.results || []);
+        } catch (error) {
+            container.innerHTML = '<p class="col-span-full text-on-surface-variant">Unable to load catalog.</p>';
+        }
+    }
+
+    async function loadWomenProducts() {
+        const container = document.getElementById('women-products-grid');
+        if (!container) return;
+
+        try {
+            const response = await fetch('/products/?category=Women', { credentials: 'include' });
+            const products = response.ok ? await response.json() : [];
+
+            if (!Array.isArray(products) || products.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center text-on-surface-variant">No women products available right now.</div>';
+                return;
+            }
+
+            container.innerHTML = products.map((product) => `
+                <article class="rounded-[28px] overflow-hidden bg-white shadow-[0_30px_80px_rgba(15,23,42,0.12)] border border-outline-variant">
+                    <img class="w-full h-72 object-cover" src="${product.image || 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80'}" alt="${product.name}" />
+                    <div class="p-8">
+                        <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">${product.category || 'Women'}</span>
+                        <h3 class="font-label-lg text-label-lg mt-4 mb-3">${product.name}</h3>
+                        <p class="font-body-md text-on-surface-variant">Elegant women's pieces crafted for everyday confidence and polish.</p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="font-semibold text-primary">${formatINR(product.price)}</span>
+                            <button class="add-to-cart-btn text-sm uppercase tracking-widest border-b border-primary hover:opacity-70" data-product-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+
+            container.querySelectorAll('.add-to-cart-btn').forEach((button) => {
+                button.addEventListener('click', async () => {
+                    const productId = Number(button.dataset.productId);
+                    if (!productId) return;
+
+                    button.disabled = true;
+                    button.textContent = 'Adding...';
+
+                    try {
+                        await addToCart({ product_id: productId, quantity: 1 });
+                        if (window.updateCartCount) {
+                            await window.updateCartCount();
+                        }
+                        button.textContent = 'Added';
+                        setTimeout(() => {
+                            button.textContent = 'Add to Cart';
+                            button.disabled = false;
+                        }, 1800);
+                    } catch (error) {
+                        button.textContent = 'Add to Cart';
+                        button.disabled = false;
+                        alert(error.message || 'Unable to add to cart');
+                    }
+                });
+            });
+        } catch (error) {
+            container.innerHTML = '<div class="col-span-full text-center text-on-surface-variant">Unable to load products.</div>';
+        }
+    }
+
+    window.addEventListener('load', () => {
+        if (window.updateCartCount) {
+            window.updateCartCount();
+        }
+        loadWomenProducts();
+        loadWomenCatalog();
+    });
+</script>
+</body>
+</html>

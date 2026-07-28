@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{% if item %}{{ item.name }} | VOGUE STREET{% else %}Item Not Found | VOGUE STREET{% endif %}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;" class="bg-white text-black">
+<header class="border-b border-gray-200 py-4 px-8 flex justify-between items-center">
+<a href="/home" style="font-family: 'Playfair Display', serif;" class="text-2xl font-bold">VOGUE STREET</a>
+<nav class="flex gap-6 text-sm uppercase tracking-widest">
+<a href="/home" class="hover:opacity-60">Home</a>
+<a href="/men" class="hover:opacity-60">Men</a>
+<a href="/women" class="hover:opacity-60">Women</a>
+<a href="/cart-page" class="hover:opacity-60">Cart</a>
+</nav>
+</header>
+
+<main class="max-w-5xl mx-auto px-8 py-16">
+{% if item %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+  <div class="aspect-square bg-gray-100 overflow-hidden">
+    <img src="{{ item.image }}" alt="{{ item.name }}" class="w-full h-full object-cover"/>
+  </div>
+  <div>
+    <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">{{ item.type }}</p>
+    <h1 style="font-family: 'Playfair Display', serif;" class="text-4xl mb-4">{{ item.name }}</h1>
+    <p class="text-sm text-gray-500 mb-6">{{ item.colour }} &middot; {{ item.department }}</p>
+    <p class="text-gray-700 leading-relaxed mb-8">{{ item.description }}</p>
+    <button id="add-to-cart-btn" data-article-id="{{ item.article_id }}"
+      class="px-10 py-4 bg-black text-white uppercase tracking-widest text-sm hover:opacity-80 transition">
+      Add to Cart
+    </button>
+    <p class="text-xs text-gray-400 mt-4">From our wider catalog &mdash; this item will be added to your store's product list.</p>
+  </div>
+</div>
+{% else %}
+<div class="text-center py-24">
+  <h1 style="font-family: 'Playfair Display', serif;" class="text-3xl mb-4">Item Not Found</h1>
+  <a href="/products-page" class="underline">Browse Products</a>
+</div>
+{% endif %}
+</main>
+
+<script src="/static/js/api.js"></script>
+{% if item %}
+<script>
+  const addBtn = document.getElementById('add-to-cart-btn');
+  if (addBtn) {
+    addBtn.addEventListener('click', async () => {
+      addBtn.disabled = true;
+      addBtn.textContent = 'Adding...';
+      try {
+        const response = await fetch(`/dataset-search/${addBtn.dataset.articleId}/add-to-cart`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ quantity: 1 }),
+        });
+        if (response.status === 401) {
+          window.location.href = '/login';
+          return;
+        }
+        if (!response.ok) throw new Error('Failed to add item');
+        if (window.updateCartCount) await window.updateCartCount();
+        addBtn.textContent = 'Added';
+        setTimeout(() => {
+          addBtn.textContent = 'Add to Cart';
+          addBtn.disabled = false;
+        }, 1800);
+      } catch (err) {
+        addBtn.textContent = 'Add to Cart';
+        addBtn.disabled = false;
+        alert('Unable to add this item right now.');
+      }
+    });
+  }
+</script>
+{% endif %}
+</body></html>
