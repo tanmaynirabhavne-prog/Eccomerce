@@ -1,4 +1,4 @@
-﻿from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
@@ -78,8 +78,11 @@ def seed_products():
 @app.on_event("startup")
 def startup_event():
     seed_products()
-    from app.ml.dataset_search import _get_dataset, get_dataset_item
-    _get_dataset()
+    try:
+        from app.ml.dataset_search import _get_dataset, get_dataset_item
+        _get_dataset()
+    except Exception as e:
+        print(f"WARNING: dataset search index not loaded: {e}")
 
 # ---------------- CORS ----------------
 app.add_middleware(
@@ -193,3 +196,4 @@ def men_page(request: Request):
 @app.get("/shoes", response_class=HTMLResponse)
 def shoes_page(request: Request):
     return templates.TemplateResponse("shoes.html", {"request": request})
+
