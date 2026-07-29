@@ -1,0 +1,19 @@
+# Environment files
+.env
+app/.env
+*.env
+
+# Database
+*.db
+ecommerce.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# ML artifacts (too large for git)
+app/ml/artifacts/
+app/ml/dataset/
