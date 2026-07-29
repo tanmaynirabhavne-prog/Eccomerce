@@ -84,15 +84,6 @@ def startup_event():
     except Exception as e:
         print(f"WARNING: dataset search index not loaded: {e}")
 
-# ---------------- TEMP DB DOWNLOAD (remove after use) ----------------
-from fastapi.responses import FileResponse
-
-@app.get("/debug-download-db")
-def debug_download_db(key: str = ""):
-    if key != "letmein123":
-        return {"error": "unauthorized"}
-    return FileResponse("ecommerce.db", filename="ecommerce.db")
-
 # ---------------- CORS ----------------
 app.add_middleware(
     CORSMiddleware,
