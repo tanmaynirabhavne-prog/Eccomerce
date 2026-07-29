@@ -179,7 +179,7 @@ def checkout_page(
 ):
 
     return templates.TemplateResponse(
-        "checkout.html",
+        "Checkout.html",
         {
             "request":request
         }
