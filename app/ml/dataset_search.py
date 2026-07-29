@@ -33,6 +33,7 @@ import os
 import hashlib
 import joblib
 import faiss
+import requests
 from sklearn.preprocessing import normalize
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -41,6 +42,30 @@ VECTORIZER_PATH = os.path.join(ARTIFACTS_DIR, "dataset_tfidf_vectorizer.pkl")
 SVD_PATH = os.path.join(ARTIFACTS_DIR, "dataset_svd.pkl")
 FAISS_INDEX_PATH = os.path.join(ARTIFACTS_DIR, "dataset_faiss.index")
 LOOKUP_PATH = os.path.join(ARTIFACTS_DIR, "dataset_lookup.pkl")
+
+_RELEASE_BASE = "https://github.com/tanmaynirabhavne-prog/Eccomerce/releases/download/v1.0-ml-artifacts"
+_DOWNLOAD_URLS = {
+    VECTORIZER_PATH: f"{_RELEASE_BASE}/dataset_tfidf_vectorizer.pkl",
+    SVD_PATH: f"{_RELEASE_BASE}/dataset_svd.pkl",
+    FAISS_INDEX_PATH: f"{_RELEASE_BASE}/dataset_faiss.index",
+    LOOKUP_PATH: f"{_RELEASE_BASE}/dataset_lookup.pkl",
+}
+
+def _download_missing_artifacts():
+    os.makedirs(ARTIFACTS_DIR, exist_ok=True)
+    for path, url in _DOWNLOAD_URLS.items():
+        if os.path.isfile(path):
+            continue
+        print(f"Downloading missing artifact: {os.path.basename(path)} ...")
+        try:
+            resp = requests.get(url, stream=True, timeout=120)
+            resp.raise_for_status()
+            with open(path, "wb") as f:
+                for chunk in resp.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            print(f"Downloaded {os.path.basename(path)} ({os.path.getsize(path)} bytes)")
+        except Exception as e:
+            print(f"Failed to download {os.path.basename(path)}: {e}")
 
 _vectorizer = None
 _svd = None
@@ -58,6 +83,7 @@ def _load_artifacts():
     if _faiss_index is not None:
         return
 
+    _download_missing_artifacts()
     missing = [
         p for p in (VECTORIZER_PATH, SVD_PATH, FAISS_INDEX_PATH, LOOKUP_PATH)
         if not os.path.isfile(p)
