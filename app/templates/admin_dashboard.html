@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title>
+<style>
+body { font-family: sans-serif; margin: 40px; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background: #f2f2f2; }
+h2 { margin-top: 40px; }
+a.logout { float:right; }
+</style>
+</head>
+<body>
+<a class="logout" href="/admin/logout">Logout</a>
+<h1>Admin Dashboard</h1>
+
+<h2>Users ({{ users|length }})</h2>
+<table>
+<tr><th>ID</th><th>Username</th><th>Email</th></tr>
+{% for u in users %}
+<tr><td>{{ u.id }}</td><td>{{ u.username }}</td><td>{{ u.email }}</td></tr>
+{% endfor %}
+</table>
+
+<h2>Orders ({{ orders_with_items|length }})</h2>
+{% for entry in orders_with_items %}
+<h3>Order #{{ entry.order.id }} - {{ entry.order.username }} - {{ entry.order.status }} - ${{ "%.2f"|format(entry.order.total) }} - {{ entry.order.payment_method }}</h3>
+<p>Ship to: {{ entry.order.address }}</p>
+<table>
+<tr><th>Product</th><th>Qty</th><th>Price</th></tr>
+{% for item in entry.line_items %}
+<tr><td>{{ item.name }}</td><td>{{ item.quantity }}</td><td>${{ "%.2f"|format(item.price) }}</td></tr>
+{% endfor %}
+</table>
+{% endfor %}
+
+<h2>Current Cart Contents</h2>
+<table>
+<tr><th>User</th><th>Product</th><th>Qty</th><th>Price</th></tr>
+{% for c in cart_rows %}
+<tr><td>{{ c.username }}</td><td>{{ c.name }}</td><td>{{ c.quantity }}</td><td>${{ "%.2f"|format(c.price) }}</td></tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

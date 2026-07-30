@@ -9,7 +9,7 @@ from starlette.middleware.sessions import SessionMiddleware
 
 from .database import engine, SessionLocal
 from . import models
-from .routers import auth, products, cart, orders, dataset_search
+from .routers import auth, products, cart, orders, dataset_search, admin
 
 
 # ---------------- APP ----------------
@@ -108,6 +108,7 @@ app.include_router(products.router)
 app.include_router(cart.router)
 app.include_router(orders.router)
 app.include_router(dataset_search.router)
+app.include_router(admin.router)
 
 # ---------------- ROOT ----------------
 @app.get("/", response_class=HTMLResponse)
