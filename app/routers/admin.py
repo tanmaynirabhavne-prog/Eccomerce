@@ -1,19 +1,14 @@
 from fastapi import APIRouter, Request, Form
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
-import sqlite3
+from sqlalchemy import text
+from ..database import engine
 import os
 
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "changeme123")
-
-
-def get_conn():
-    conn = sqlite3.connect("ecommerce.db")
-    conn.row_factory = sqlite3.Row
-    return conn
 
 
 @router.get("/admin/login")
@@ -40,34 +35,32 @@ def admin_dashboard(request: Request):
     if not request.session.get("is_admin"):
         return RedirectResponse(url="/admin/login", status_code=303)
 
-    conn = get_conn()
-    users = conn.execute("SELECT id, username, email FROM users ORDER BY id").fetchall()
+    with engine.connect() as conn:
+        users = conn.execute(text("SELECT id, username, email FROM users ORDER BY id")).mappings().all()
 
-    orders = conn.execute("""
-        SELECT o.id, o.user_id, u.username, o.total, o.status, o.address, o.payment_method
-        FROM orders o
-        JOIN users u ON u.id = o.user_id
-        ORDER BY o.id DESC
-    """).fetchall()
+        orders = conn.execute(text("""
+            SELECT o.id, o.user_id, u.username, o.total, o.status, o.address, o.payment_method
+            FROM orders o
+            JOIN users u ON u.id = o.user_id
+            ORDER BY o.id DESC
+        """)).mappings().all()
 
-    orders_with_items = []
-    for o in orders:
-        items = conn.execute("""
-            SELECT oi.quantity, oi.price, p.name
-            FROM order_items oi
-            JOIN products p ON p.id = oi.product_id
-            WHERE oi.order_id = ?
-        """, (o["id"],)).fetchall()
-        orders_with_items.append({"order": o, "line_items": items})
+        orders_with_items = []
+        for o in orders:
+            items = conn.execute(text("""
+                SELECT oi.quantity, oi.price, p.name
+                FROM order_items oi
+                JOIN products p ON p.id = oi.product_id
+                WHERE oi.order_id = :order_id
+            """), {"order_id": o["id"]}).mappings().all()
+            orders_with_items.append({"order": o, "line_items": items})
 
-    cart_rows = conn.execute("""
-        SELECT c.id, u.username, p.name, c.quantity, p.price
-        FROM cart c
-        JOIN users u ON u.id = c.user_id
-        JOIN products p ON p.id = c.product_id
-    """).fetchall()
-
-    conn.close()
+        cart_rows = conn.execute(text("""
+            SELECT c.id, u.username, p.name, c.quantity, p.price
+            FROM cart c
+            JOIN users u ON u.id = c.user_id
+            JOIN products p ON p.id = c.product_id
+        """)).mappings().all()
 
     return templates.TemplateResponse("admin_dashboard.html", {
         "request": request,
